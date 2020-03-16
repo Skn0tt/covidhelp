@@ -3,7 +3,7 @@ import basic_auth from "basic-auth";
 import { withAuthProvider } from "../authprovider";
 
 export const basicAuth = (
-  authenticate: (name: string, pass: string) => boolean
+  authenticate: (name: string, pass: string) => Promise<boolean>
 ) => <T>(next: Handler<T>): Handler => async (req, res) => {
   const { name = "", pass = "" } = basic_auth(req) || {};
   const isAuthenticated = authenticate(name, pass);

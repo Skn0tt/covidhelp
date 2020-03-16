@@ -5,7 +5,7 @@ function generateRandomNumber() {
   return Math.random() * 100;
 }
 
-const randomAuth = basicAuth(() => Math.random() > 0.5);
+const randomAuth = basicAuth(async () => Math.random() > 0.5);
 
 export default RESTHandler(randomAuth)({
   async get(req, res) {

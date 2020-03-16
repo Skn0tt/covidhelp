@@ -10,6 +10,12 @@ export const withAuthProvider = (req: NextApiRequest, userId: string) => async (
   reqs.delete(req);
 };
 
-export function getUserID(req: NextApiRequest) {
-  return reqs.get(req);
+export function useUserID(req: NextApiRequest) {
+  const uid = reqs.get(req);
+
+  if (!uid) {
+    throw new Error("useUserID can only be used after authorization.");
+  }
+
+  return uid;
 }
