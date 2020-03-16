@@ -1,12 +1,15 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { RESTHandler } from "./handler";
 
 function generateRandomNumber() {
   return Math.random() * 100;
 }
 
-export default (req: NextApiRequest, res: NextApiResponse<number>) => {
-  setTimeout(() => {
-    res.status(200).send(generateRandomNumber());
-  }, 1000);
+export default RESTHandler({
 
-}
+  async get(req, res) {
+    setTimeout(() => {
+      res.status(200).send(generateRandomNumber());
+    }, 1000);
+  }
+
+});
