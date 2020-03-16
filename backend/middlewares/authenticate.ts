@@ -2,6 +2,8 @@ import { Middleware } from ".";
 import * as basic_auth from "basic-auth";
 import { withAuthProvider } from "../authprovider";
 import { verifyJWT } from "../jwt";
+import { UserRepo } from "../db/User";
+import { BCrypt } from "../BCrypt";
 
 function getBearerToken(authorization: string): string | null {
   if (authorization.startsWith("Bearer ")) {
@@ -22,7 +24,18 @@ async function checkJWT(jwt: string): Promise<string | null> {
 }
 
 async function checkBasic(name: string, pass: string): Promise<string | null> {
-  return null;
+  const user = await UserRepo.findByUsername(name);
+  if (!user) {
+    return null;
+  }
+
+  const { _id, passwordHash } = user;
+  if (!passwordHash) {
+    return null;
+  }
+
+  const isValid = await BCrypt.verify(pass, passwordHash);
+  return isValid ? _id : null;
 }
 
 export const authenticate: Middleware = next => async (req, res) => {

@@ -1,5 +1,5 @@
 import * as jwt from "jsonwebtoken";
-import { Config } from "./config";
+import { Config } from "./Config";
 
 interface JWTPayload {
   uid: string;
