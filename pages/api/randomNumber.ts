@@ -1,11 +1,13 @@
 import { RESTHandler } from "../../backend/handler";
-import { authentication } from "../../backend/middlewares/authentication";
+import { basicAuth } from "../../backend/middlewares/basicAuth";
 
 function generateRandomNumber() {
   return Math.random() * 100;
 }
 
-export default RESTHandler(authentication)({
+const randomAuth = basicAuth(() => Math.random() > 0.5);
+
+export default RESTHandler(randomAuth)({
   async get(req, res) {
     setTimeout(() => {
       res.status(200).send(generateRandomNumber());
