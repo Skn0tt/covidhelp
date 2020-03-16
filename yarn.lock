@@ -913,17 +913,31 @@
   resolved "https://registry.yarnpkg.com/@next/polyfill-nomodule/-/polyfill-nomodule-9.3.0.tgz#5d564a6af7f80f95dba30281dd3420a4a170e219"
   integrity sha512-CPYTirQylgrtXNHfQriy5V/ur4xURkF5PNRiBg5Tac1fQtCFc6mCJzK4+K0eKcn8mPKdo+20stnr9dvOtrajXw==
 
+"@types/basic-auth@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@types/basic-auth/-/basic-auth-1.1.3.tgz#a787ede8310804174fbbf3d6c623ab1ccedb02cd"
+  integrity sha512-W3rv6J0IGlxqgE2eQ2pTb0gBjaGtejQpJ6uaCjz3UQ65+TFTPC5/lAE+POfx1YLdjtxvejJzsIAfd3MxWiVmfg==
+  dependencies:
+    "@types/node" "*"
+
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
+
+"@types/micro@^7.3.3":
+  version "7.3.3"
+  resolved "https://registry.yarnpkg.com/@types/micro/-/micro-7.3.3.tgz#31ead8df18ac10d58b7be1186d4b2d977b13a938"
+  integrity sha512-I3n3QYT7lqAxkyAoTZyg1yrvo38BxW/7ZafLAXZF/zZQOnAnQzg6j9XOuSmUEL5GGVFKWw4iqM+ZLnqb2154TA==
+  dependencies:
+    "@types/node" "*"
 
 "@types/minimatch@^3.0.3":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/node@^13.9.1":
+"@types/node@*", "@types/node@^13.9.1":
   version "13.9.1"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-13.9.1.tgz#96f606f8cd67fb018847d9b61e93997dabdefc72"
   integrity sha512-E6M6N0blf/jiZx8Q3nb0vNaswQeEyn0XlupO+xN6DtJ6r6IT4nXrTry7zhIfYvFCl3/8Cu6WIysmUBKiqV0bqQ==
@@ -1454,6 +1468,13 @@ base@^0.11.1:
     isobject "^3.0.1"
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
+
+basic-auth@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/basic-auth/-/basic-auth-2.0.1.tgz#b998279bf47ce38344b4f3cf916d4679bbf51e3a"
+  integrity sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==
+  dependencies:
+    safe-buffer "5.1.2"
 
 big.js@^5.2.2:
   version "5.2.2"
